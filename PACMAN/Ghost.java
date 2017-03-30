@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ghost extends Actor
 {
+    private boolean blinking;
     /**
      * Act - do whatever the Ghost wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -16,4 +17,8 @@ public class Ghost extends Actor
     {
         // Add your action code here.
     }    
+    public void setBlinking(boolean state)
+    {
+        
+    }
 }
