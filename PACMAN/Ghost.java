@@ -17,12 +17,4 @@ public class Ghost extends Actor
     {
         // Add your action code here.
     }    
-    /**
-        set whether the Ghost should be blinking (PACMAN is powered up) or not
-        @param state true for blinking, false for not blinking
-    **/
-    public void setBlinking(boolean state)
-    {
-        
-    }
 }

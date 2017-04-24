@@ -8,6 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Junction extends Actor
 {
+    public boolean up;
+    public boolean down;
+    public boolean left;
+    public boolean right;
     /**
      * Act - do whatever the Junction wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
