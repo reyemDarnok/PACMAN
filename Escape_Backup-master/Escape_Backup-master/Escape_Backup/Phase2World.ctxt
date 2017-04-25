@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Phase2World
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Phase2\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Phase2World()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Phase2.\r\n\ \r\n
+comment2.params=
+comment2.target=java.lang.String[]\ getControls()
+comment3.params=menu\ p1W\ p3W\ mW
+comment3.target=void\ setWorlds(Menu,\ Phase1World,\ Phase3World,\ MapWorld)
+comment4.params=controls\ angle
+comment4.target=void\ setGlobals(java.lang.String[],\ int)
+numComments=5

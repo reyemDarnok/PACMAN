@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Menu
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ Ben\ Konrad\ Meyer\ \r\n\ @version\ 28.03.2017\r\n
+comment1.params=
+comment1.target=Menu()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Menu.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ showMenu()
+comment4.params=
+comment4.target=void\ startGame()
+comment5.params=text\ x\ y
+comment5.target=void\ text(java.lang.String,\ int,\ int)
+comment6.params=
+comment6.target=void\ deleteAllText()
+comment7.params=controls\ angle
+comment7.target=void\ setGlobals(java.lang.String[],\ int)
+numComments=8

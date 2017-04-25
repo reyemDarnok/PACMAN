@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=MapWorld
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Map\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=MapWorld()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Map.\r\n\ \r\n
+comment2.params=menu\ p2W\ p3W\ p1W
+comment2.target=void\ setWorlds(Menu,\ Phase2World,\ Phase3World,\ Phase1World)
+comment2.text=\r\n\ \ \ \ \ \ Sets\ the\ parameters\ of\ this\ World.\ Should\ be\ run\ in\ the\ beginning\ to\ avoid\ nullPointerErrors.\r\n\ \ \ \ \ \ @param\ menu\ The\ Menu\ World\ of\ the\ scenario\r\n\ \ \ \ \ \ @param\ p2W\ The\ Phase2World\ of\ the\ scenario\r\n\ \ \ \ \ \ @param\ p3W\ The\ Phase3World\ of\ the\ scenario\r\n\ \ \ \ \ \ @param\ p1W\ The\ Phase1World\ of\ the\ scenario\r\n
+comment3.params=controls\ angle
+comment3.target=void\ setGlobals(java.lang.String[],\ int)
+comment3.text=\r\n\ \ \ \ \ \ \ \ Sets\ the\ globals\ in\ this\ World.\ Should\ be\ run\ whenever\ the\ globals\ are\ changed.\r\n\ \ \ \ \ \ \ \ @param\ controls\ How\ the\ controls\ are\ currently\ set\r\n\ \ \ \ \ \ \ \ @param\ which\ angle\ the\ turret\ has\r\n
+numComments=4
