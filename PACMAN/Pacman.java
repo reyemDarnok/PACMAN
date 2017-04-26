@@ -57,27 +57,22 @@ public class Pacman extends Actor
     public void turn()
     {
         Junction junction = (Junction) getOneObjectAtOffset(0,0,Junction.class); 
-        if(Greenfoot.isKeyDown("left") && junction != null && junction.left)
+        if(Greenfoot.isKeyDown("left") && (junction != null && junction.left || getRotation()==0))
         {
             setRotation(180);
         }
-        if(Greenfoot.isKeyDown("right") && junction != null && junction.right)
+        if(Greenfoot.isKeyDown("right") && (junction != null && junction.right || getRotation()==180))
         {
             setRotation(0);
         }
-        if(Greenfoot.isKeyDown("up") && junction != null && junction.up)
+        if(Greenfoot.isKeyDown("up") && (junction != null && junction.up||getRotation()==90))
         {
             setRotation(270);
         }
-        if(Greenfoot.isKeyDown("down") && junction != null && junction.down)
+        if(Greenfoot.isKeyDown("down") && (junction != null && junction.down||getRotation()==270))
         {
             setRotation(90);
         }
         // Add your action code here.    
-    }
-
-    public Actor test()
-    {
-        return getOneIntersectingObject(Junction.class);
-    }
+    } 
 }

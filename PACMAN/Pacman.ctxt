@@ -10,6 +10,4 @@ comment3.params=
 comment3.target=void\ eatDot()
 comment4.params=
 comment4.target=void\ turn()
-comment5.params=
-comment5.target=greenfoot.Actor\ test()
-numComments=6
+numComments=5
