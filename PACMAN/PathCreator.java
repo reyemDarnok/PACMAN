@@ -14,13 +14,19 @@ public class PathCreator extends Actor
     public void act()
     {
         world=(PacmanWorld) getWorld();
+        boolean end=false;
         do {
             for(int i =Greenfoot.getRandomNumber(4)+3;i>0;i--)
             {
                 world.addObject(new Path(),getX(),getY());
                 move(cellSize);
                 if(hitEdgeIn(1))
-                    break;
+                    i=-1;
+                if(getOneObjectAtOffset(0,0,Path.class)!=null)
+                {
+                    end=true;
+                    i=-1;
+                }
             }
             if(Greenfoot.getRandomNumber(4)==0)
             {
@@ -38,10 +44,9 @@ public class PathCreator extends Actor
             }
             if(Greenfoot.getRandomNumber(10)==0)
             {
-                world.removeObject(this);
-                break;
+                end=true;
             }
-        } while(getOneObjectAtOffset(0,0,Path.class)!=null&&!hitEdgeIn(1));
+        } while(getOneObjectAtOffset(0,0,Path.class)!=null&&!hitEdgeIn(1)||end);
     }
 
     public boolean hitEdgeIn(int steps)
