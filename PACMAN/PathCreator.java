@@ -21,13 +21,14 @@ public class PathCreator extends Actor
                 world.addObject(new Path(),getX(),getY());
                 move(cellSize);
                 if(hitEdgeIn(1))
-                    i=-1;
+                    break;
                 if(getOneObjectAtOffset(0,0,Path.class)!=null)
                 {
                     end=true;
-                    i=-1;
+                    break;
                 }
             }
+            if(end) break;
             if(Greenfoot.getRandomNumber(4)==0)
             {
                 PathCreator p = new PathCreator();
