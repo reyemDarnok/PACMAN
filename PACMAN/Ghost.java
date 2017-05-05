@@ -7,12 +7,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Ghost extends Actor
 {
+    //is the ghost vulnerable?
     private boolean blinking;
+    //reference to the pacman for navigation purposes
     private Pacman pacman;
 
+    /**
+        Only for collision testing. Breaks navigation
+    **/
     public Ghost()
     {}
-    
+    /**
+        Main constructor.
+        @param pacman A reference to the pacman that's to be hunted
+    **/
     public Ghost(Pacman pacman)
     {
         this.pacman = pacman;
@@ -28,17 +36,24 @@ public class Ghost extends Actor
         turn();
     }
 
+    /**
+        Turns in the general direction of the pacman if allowed to
+    **/
     public void turn()
     {
+        //is there even a junction for turning there
         Junction junction = (Junction) getOneObjectAtOffset(0,0,Junction.class);
         if(junction!=null)
-        // Add your action code here.
         {
+            //how far am I in the different dimensions from the pacman
             int offsetX = getX()-pacman.getX();
             int offsetY = getY()-pacman.getY();
+            //an array for storing the priority of the directions
             int[] order = new int[4];
+            //is the distance in x or y bigger? the bigger one is prioritised
             if(Math.abs(offsetX)>Math.abs(offsetY))
             {
+                //if pacman is 
                 if(offsetX<0)
                 {
                     order[0]=0;
