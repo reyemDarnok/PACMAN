@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Junction extends Actor
 {
+    //are there ways up, down,left or right?
     public boolean up;
     public boolean down;
     public boolean left;
