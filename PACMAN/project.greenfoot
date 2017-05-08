@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu May 04 12:51:16 CEST 2017
+#Mon May 08 08:28:54 CEST 2017
 editor.fx.0.height=700
 target2.width=80
 target8.name=Junction
@@ -102,6 +102,7 @@ class.Junction.image=junction.png
 dependency6.from=Pacman
 project.charset=UTF-8
 target3.showInterface=false
+class.PlayerGhost.superclass=greenfoot.Actor
 target3.name=Wall
 target6.showInterface=false
 class.PathCreator.superclass=greenfoot.Actor
@@ -126,6 +127,7 @@ target9.width=80
 target7.height=50
 dependency5.type=UsesDependency
 target8.type=ClassTarget
+class.Button.superclass=greenfoot.Actor
 dependency13.from=PathCreator
 dependency9.type=UsesDependency
 target6.width=110
