@@ -53,23 +53,28 @@ public class Ghost extends Actor
             //is the distance in x or y bigger? the bigger one is prioritised
             if(Math.abs(offsetX)>Math.abs(offsetY))
             {
-                //if pacman is 
+                //if pacman is right
                 if(offsetX<0)
                 {
+                    //I want to go right the most
                     order[0]=0;
+                    //and left the least
                     order[3]=180;
                 } else {
+                    //and vice versa
                     order[0]=180;
                     order[3]=0;
                 }
                 if(offsetY<0)
                 {
+                    //same thing as above but with the y-axis
                     order[1]=90;
                     order[2]=270;
                 } else {
                     order[1]=270;
                     order[2]=90;
                 }
+                //and the same with reversed x- and y-axis priorities
             } else {
                 if(offsetX<0)
                 {
@@ -88,6 +93,7 @@ public class Ghost extends Actor
                     order[3]=90;
                 }   
             } 
+            //if you can go left and want to go left
             if(order[0]==0&&junction.right==true)
             {
                 setRotation(0);
@@ -106,6 +112,7 @@ public class Ghost extends Actor
             } else if(order[1]==90&&junction.down==true)
             {
                 setRotation(90);
+            //if the most desirable scenario is impossible, try the next(and so on)
             } else if(order[1]==180&&junction.left==true)
             {
                 setRotation(180);
