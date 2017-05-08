@@ -8,7 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Pacman extends Actor
 {
+    //the lifes of pacman
     public int lifes = 3;
+    //whether or not the pacman can eat ghosts
     public boolean powerup;
     /**
      * Act - do whatever the PACMAN wants to do. This method is called whenever
@@ -22,41 +24,59 @@ public class Pacman extends Actor
         eatGhost();
     }
 
+    /**
+        Tries to eat a ghost. Damages Pacman if no powerup was eaten 
+    **/
     public void eatGhost()
     {
         Ghost ghost= (Ghost) getOneIntersectingObject(Ghost.class);
+        //if there is actually a ghost
         if(ghost!=null)
         {
             PacmanWorld pW = (PacmanWorld) getWorld();
+            //if pacman has a powerup
             if(powerup)
             {
+                //eat the ghost and get some points
                 pW.score+=20;
                 pW.respawn(ghost);
             } else {
+                //if not and pacman survives this
                 if(--lifes>0)
                 {
+                    //lose a live (--lives) and respawns
                     pW.respawn(this);
                 } else {
+                    //if that was the last live, go game over
                     pW.gameOver();
                 }
             }
         }
     }
 
+    /**
+        tries to eat a dot
+    **/
     public void eatDot()
     {
         Dot dot = (Dot) getOneObjectAtOffset(0,0,Dot.class);
+        //if there is a dot
         if(dot!=null)
         {
+            //get a point and kill the dot
             PacmanWorld pW = (PacmanWorld) getWorld();
             pW.score++;
             pW.removeObject(dot);
         }
     }
 
+    /**
+        handles turning
+    **/
     public void turn()
     {
         Junction junction = (Junction) getOneObjectAtOffset(0,0,Junction.class); 
+        //if Pacman can turn left and the player wants to do so, do so. And the same for the other directions
         if(Greenfoot.isKeyDown("left") && (junction != null && junction.left || getRotation()==0))
         {
             setRotation(180);
