@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Mon May 08 08:28:54 CEST 2017
+#Wed May 10 10:15:25 CEST 2017
 editor.fx.0.height=700
 target2.width=80
 target8.name=Junction
@@ -36,7 +36,7 @@ class.Path.superclass=greenfoot.Actor
 class.Menu.superclass=greenfoot.World
 target4.typeParameters=
 target5.name=Dot
-world.lastInstantiated=PacmanWorld
+world.lastInstantiated=Menu
 mainWindow.width=1700
 readme.width=47
 class.PacmanWorld.superclass=greenfoot.World
@@ -65,10 +65,12 @@ editor.swing.0.y=1
 mainWindow.x=-8
 editor.swing.0.x=0
 target5.showInterface=false
+class.AIpacman.image=pacman.png
 dependency5.from=Pacman
 target8.showInterface=false
 target7.typeParameters=
 target2.name=Pacman
+class.AIpacman.superclass=Pacman
 dependency9.from=Ghost
 readme.name=@README
 editor.swing.0.width=701
@@ -102,7 +104,7 @@ class.Junction.image=junction.png
 dependency6.from=Pacman
 project.charset=UTF-8
 target3.showInterface=false
-class.PlayerGhost.superclass=greenfoot.Actor
+class.PlayerGhost.superclass=Ghost
 target3.name=Wall
 target6.showInterface=false
 class.PathCreator.superclass=greenfoot.Actor
