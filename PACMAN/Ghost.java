@@ -11,16 +11,18 @@ public class Ghost extends Actor
     private boolean blinking;
     //reference to the pacman for navigation purposes
     private Pacman pacman;
-
+    //respawn waiting
+    private int wait;
     /**
-        Only for collision testing. Breaks navigation
-    **/
+    Only for collision testing. Breaks navigation. DEPRECATED
+     **/
     public Ghost()
     {}
+
     /**
-        Main constructor.
-        @param pacman A reference to the pacman that's to be hunted
-    **/
+    Main constructor.
+    @param pacman A reference to the pacman that's to be hunted
+     **/
     public Ghost(Pacman pacman)
     {
         this.pacman = pacman;
@@ -32,13 +34,23 @@ public class Ghost extends Actor
      */
     public void act() 
     {
-        move(1);
-        turn();
+        if(wait<=0)
+        {
+            move(1);
+            turn();
+        } else {
+            wait--;
+        }
     }
 
+    public void stun()
+    {
+        wait=200;
+    }
+    
     /**
-        Turns in the general direction of the pacman if allowed to
-    **/
+    Turns in the general direction of the pacman if allowed to
+     **/
     public void turn()
     {
         //is there even a junction for turning there
@@ -112,7 +124,7 @@ public class Ghost extends Actor
             } else if(order[1]==90&&junction.down==true)
             {
                 setRotation(90);
-            //if the most desirable scenario is impossible, try the next(and so on)
+                //if the most desirable scenario is impossible, try the next(and so on)
             } else if(order[1]==180&&junction.left==true)
             {
                 setRotation(180);

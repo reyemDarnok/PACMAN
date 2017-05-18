@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class MyWorld here.
  * 
@@ -9,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PacmanWorld extends World
 {
     public int score;
-    public int[] PacmanSpawn = new int[2];
-    public int[] GhostSpawn = new int[2];
+    public int[] pacmanSpawn = new int[2];
+    public int[] ghostSpawn = new int[2];
     public PacmanWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -30,11 +29,12 @@ public class PacmanWorld extends World
     }
     public void respawn(Ghost ghost)
     {
-        
+        ghost.setLocation(ghostSpawn[0],ghostSpawn[1]);
+        ghost.stun();
     }
     public void respawn(Pacman pacman)
     {
-        
+        pacman.setLocation(pacmanSpawn[0],pacmanSpawn[1]);
     }
     public void gameOver()
     {

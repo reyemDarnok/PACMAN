@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class Menu extends World
 {
-    String status = "main";
+    String status = "menu";
     String[] pacmanControls = new String[4];
     String[] ghost1Controls = new String[4];
     String[] ghost2Controls = new String[4];
@@ -62,7 +62,7 @@ public class Menu extends World
         {
             //creating the identifiers (adding a new Button, with a new Image thats some short text, giving it an identifier and ordering it in a columm)
             removeAllObjects();
-            addObject(new Button(new GreenfootImage("Pacman oben:",getHeight()/20,null,null),this,1),75,10);
+            addObject(new Button(new GreenfootImage("Pacman oben:",getHeight()/20,null,null),this,4),75,10);
             addObject(new Button(new GreenfootImage("Pacman links:",getHeight()/20,null,null),this,5),75,30);
             addObject(new Button(new GreenfootImage("Pacman unten:",getHeight()/20,null,null),this,6),75,50);
             addObject(new Button(new GreenfootImage("Pacman rechts:",getHeight()/20,null,null),this,7),75,70);
@@ -167,6 +167,18 @@ public class Menu extends World
         } else if(number==4)
         {
             pacmanControls[0]=Greenfoot.ask("Auf was soll Pacman oben gesetzt werden?");
+        } else if(number==5)
+        {
+            pacmanControls[1]=Greenfoot.ask("Auf was soll Pacman links gesetzt werden?");
+        } else if(number==6)
+        {
+            pacmanControls[2]=Greenfoot.ask("Auf was soll Pacman unten gesetzt werden?");
+        } else if(number==7)
+        {
+            pacmanControls[3]=Greenfoot.ask("Auf was soll Pacman rechts gesetzt werden?");
+        }  else if(number==8)
+        {
+            ghostControls[0]=Greenfoot.ask("Auf was soll Geist 1 oben gesetzt werden?");
         }
     }
 

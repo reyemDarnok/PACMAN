@@ -77,19 +77,21 @@ public class Pacman extends Actor
     {
         Junction junction = (Junction) getOneObjectAtOffset(0,0,Junction.class); 
         //if Pacman can turn left and the player wants to do so, do so. And the same for the other directions
-        if(Greenfoot.isKeyDown("left") && (junction != null && junction.left || getRotation()==0))
+        //he can do so if there is a) a junction that has the right direction available or 
+        //b) it would be an u-turn
+        if(Greenfoot.isKeyDown("left") && (junction != null && junction.getLeft() || getRotation()==0))
         {
             setRotation(180);
         }
-        if(Greenfoot.isKeyDown("right") && (junction != null && junction.right || getRotation()==180))
+        if(Greenfoot.isKeyDown("right") && (junction != null && junction.getRight() || getRotation()==180))
         {
             setRotation(0);
         }
-        if(Greenfoot.isKeyDown("up") && (junction != null && junction.up||getRotation()==90))
+        if(Greenfoot.isKeyDown("up") && (junction != null && junction.getUp()||getRotation()==90))
         {
             setRotation(270);
         }
-        if(Greenfoot.isKeyDown("down") && (junction != null && junction.down||getRotation()==270))
+        if(Greenfoot.isKeyDown("down") && (junction != null && junction.getDown()||getRotation()==270))
         {
             setRotation(90);
         }
