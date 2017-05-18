@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Wed May 10 10:15:25 CEST 2017
+#Thu May 18 12:22:09 CEST 2017
 editor.fx.0.height=700
 target2.width=80
 target8.name=Junction
@@ -145,8 +145,8 @@ dependency4.to=Dot
 target4.name=Ghost
 readme.y=10
 readme.x=10
-target4.height=50
 class.Pacman.superclass=greenfoot.Actor
+target4.height=50
 readme.height=58
 target1.width=80
 class.Pacman.image=pacman.png
