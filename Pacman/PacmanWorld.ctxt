@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=PacmanWorld
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=pacmanControls\ ghost1Controls\ ghost2Controls\ ghost3Controls\ ghost4Controls\ pacmanAI\ ghost1AI\ ghost2AI\ ghost3AI\ ghost4AI
+comment1.target=PacmanWorld(java.lang.String[],\ java.lang.String[],\ java.lang.String[],\ java.lang.String[],\ java.lang.String[],\ boolean,\ boolean,\ boolean,\ boolean,\ boolean)
+comment2.params=
+comment2.target=PacmanWorld()
+comment3.params=
+comment3.target=void\ prepare()
+comment4.params=
+comment4.target=void\ act()
+comment5.params=
+comment5.target=Counter\ getLifesCounter()
+comment6.params=ghost
+comment6.target=void\ respawn(Ghost)
+comment7.params=pacman
+comment7.target=void\ respawn(Pacman)
+comment8.params=
+comment8.target=void\ gameOver()
+numComments=9
