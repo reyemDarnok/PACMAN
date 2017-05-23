@@ -10,11 +10,22 @@ public class Button extends Actor
 {
     private Menu world;
     private int number;
+    private int height=5;
+    private int width=5;
     public Button(GreenfootImage image,Menu world,int number)
     {
         setImage(image);
         this.world=world;
         this.number=number;
+    }
+    
+    public Button(GreenfootImage image,Menu world,int number,int height, int width)
+    {
+        setImage(image);
+        this.world=world;
+        this.number=number;
+        this.height=height;
+        this.width=width;
     }
 
     /**
@@ -40,7 +51,7 @@ public class Button extends Actor
             int mY = mouse.getY();
             int x = getX();
             int y = getY();
-            if((mX<x+5 && mX>x-5) && (mY<y+5&&mY>y-5) && mouse.getButton()==1)
+            if((mX<x+width && mX>x-width) && (mY<y+height&&mY>y-height) && mouse.getButton()==1)
             {
                 result = true;
             }

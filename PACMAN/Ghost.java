@@ -65,12 +65,12 @@ public class Ghost extends Actor
             //is the distance in x or y bigger? the bigger one is prioritised
             if(Math.abs(offsetX)>Math.abs(offsetY))
             {
-                //if pacman is right
+                //if pacman is getRight()
                 if(offsetX<0)
                 {
-                    //I want to go right the most
+                    //I want to go getRight() the most
                     order[0]=0;
-                    //and left the least
+                    //and getLeft() the least
                     order[3]=180;
                 } else {
                     //and vice versa
@@ -105,54 +105,54 @@ public class Ghost extends Actor
                     order[3]=90;
                 }   
             } 
-            //if you can go left and want to go left
-            if(order[0]==0&&junction.right==true)
+            //if you can go getLeft() and want to go getLeft()
+            if(order[0]==0&&junction.getRight()==true)
             {
                 setRotation(0);
-            }else if(order[0]==90&&junction.down==true)
+            }else if(order[0]==90&&junction.getDown()==true)
             {
                 setRotation(90);
-            } else if(order[0]==180&&junction.left==true)
+            } else if(order[0]==180&&junction.getLeft()==true)
             {
                 setRotation(180);
-            } else if(order[0]==270&&junction.up==true)
+            } else if(order[0]==270&&junction.getUp()==true)
             {
                 setRotation(270);
-            } else if(order[1]==0&&junction.right==true)
+            } else if(order[1]==0&&junction.getRight()==true)
             {
                 setRotation(0);
-            } else if(order[1]==90&&junction.down==true)
+            } else if(order[1]==90&&junction.getDown()==true)
             {
                 setRotation(90);
                 //if the most desirable scenario is impossible, try the next(and so on)
-            } else if(order[1]==180&&junction.left==true)
+            } else if(order[1]==180&&junction.getLeft()==true)
             {
                 setRotation(180);
-            } else if(order[1]==270&&junction.up==true)
+            } else if(order[1]==270&&junction.getUp()==true)
             {
                 setRotation(270);
-            } else if(order[2]==0&&junction.right==true)
+            } else if(order[2]==0&&junction.getRight()==true)
             {
                 setRotation(0);
-            } else if(order[2]==90&&junction.down==true)
+            } else if(order[2]==90&&junction.getDown()==true)
             {
                 setRotation(90);
-            } else if(order[2]==180&&junction.left==true)
+            } else if(order[2]==180&&junction.getLeft()==true)
             {
                 setRotation(90);
-            } else if(order[2]==270&&junction.up==true)
+            } else if(order[2]==270&&junction.getUp()==true)
             {
                 setRotation(270);
-            } else if(order[3]==0&&junction.right==true)
+            } else if(order[3]==0&&junction.getRight()==true)
             {
                 setRotation(0);
-            } else if(order[3]==90&&junction.down==true)
+            } else if(order[3]==90&&junction.getDown()==true)
             {
                 setRotation(90);
-            } else if(order[3]==180&&junction.left==true)
+            } else if(order[3]==180&&junction.getLeft()==true)
             {
                 setRotation(180);
-            } else if(order[3]==270&&junction.up==true)
+            } else if(order[3]==270&&junction.getUp()==true)
             {
                 setRotation(270);
             } 

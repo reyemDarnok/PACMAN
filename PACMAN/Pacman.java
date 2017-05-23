@@ -22,6 +22,7 @@ public class Pacman extends Actor
         turn();
         eatDot();
         eatGhost();
+        ((PacmanWorld)getWorld()).getLifesCounter().update(Integer.toString(lifes));
     }
 
     /**
