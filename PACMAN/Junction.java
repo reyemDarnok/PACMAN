@@ -19,25 +19,29 @@ public class Junction extends Actor
      */
     public void act() 
     {
-        Wall wall = (Wall) getOneObjectAtOffset(50,0,Wall.class);
+        Wall wall = (Wall) getOneObjectAtOffset(0,-100,Wall.class);
         if(wall == null)
         {
             right=true;
+            System.out.println("right");
         }
-        wall = (Wall) getOneObjectAtOffset(0,50,Wall.class);
+        wall = (Wall) getOneObjectAtOffset(-100,0,Wall.class);
         if(wall == null)
         {
             up=true;
+            System.out.println("up");
         }
-        wall = (Wall) getOneObjectAtOffset(0,-50,Wall.class);
+        wall = (Wall) getOneObjectAtOffset(100,0,Wall.class);
         if(wall == null)
         {
             down=true;
+            System.out.println("down");
         }
-        wall = (Wall) getOneObjectAtOffset(-50,0,Wall.class);
+        wall = (Wall) getOneObjectAtOffset(0,100,Wall.class);
         if(wall == null)
         {
             left=true;
+            System.out.println("left");
         }
         // Add your action code here.
     }    

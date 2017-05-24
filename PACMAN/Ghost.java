@@ -36,7 +36,7 @@ public class Ghost extends Actor
     {
         if(wait<=0)
         {
-            move(1);
+            move();
             turn();
         } else {
             wait--;
@@ -46,6 +46,35 @@ public class Ghost extends Actor
     public void stun()
     {
         wait=200;
+    }
+    
+    public void move()
+    {
+        boolean canMove=true;
+        if(getRotation()==0)
+        {
+            if(getOneObjectAtOffset(100,0,Wall.class)==null)
+                canMove=true;
+        }
+         if(getRotation()==90)
+        {
+            if(getOneObjectAtOffset(0,100,Wall.class)==null)
+                canMove=true;
+        }
+         if(getRotation()==180)
+        {
+            if(getOneObjectAtOffset(-100,0,Wall.class)==null)
+                canMove=true;
+        }
+         if(getRotation()==270)
+        {
+            if(getOneObjectAtOffset(0,-100,Wall.class)==null)
+                canMove=true;
+        }
+        if(canMove)
+        {
+            move(1);
+        }
     }
     
     /**

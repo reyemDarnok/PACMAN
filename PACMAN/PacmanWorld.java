@@ -25,7 +25,7 @@ public class PacmanWorld extends World
     boolean ghost4AI=true;
     public PacmanWorld(String[] pacmanControls,String[] ghost1Controls,String[] ghost2Controls,String[] ghost3Controls,String[] ghost4Controls,boolean pacmanAI,boolean ghost1AI,boolean ghost2AI, boolean ghost3AI,boolean ghost4AI)
     {
-        super(600, 400, 1);
+        super(1300, 800, 1);
         this.pacmanControls = pacmanControls;
         this.ghost1Controls = ghost1Controls;
         this.ghost2Controls = ghost2Controls;
@@ -38,15 +38,16 @@ public class PacmanWorld extends World
         this.ghost4AI = ghost4AI;
         prepare();
         generateALevel();
+        //testing
         Junction junction = new Junction();
         pacman = new Pacman();
-        addObject(pacman,100,100);
-        addObject(new Dot(),200,100);
+        addObject(pacman,125,125);
+        /*addObject(new Dot(),200,100);
         addObject(new Dot(),210,100);
         addObject(new Ghost(pacman),220,100);
         addObject(new Dot(),230,100);
         addObject(new Dot(),240,100);
-        addObject(junction,300,100);
+        */addObject(junction,1215,125);
     }
     public void generateALevel()
     {
@@ -59,7 +60,16 @@ public class PacmanWorld extends World
     
     public void level1()
     {
-        
+        for(int i=25; i<getWidth();i+=50)
+        {
+            addObject(new Wall(),i,25);
+            addObject(new Wall(),i,getHeight()-25);
+        }
+        for(int i =75; i<getHeight()-25;i+=50)
+        {
+            addObject(new Wall(),25,i);
+            addObject(new Wall(),getWidth()-25,i);
+        }
     }
     
     public void prepare()
@@ -67,7 +77,7 @@ public class PacmanWorld extends World
         scoreCounter=new Counter("score: ");
         addObject(scoreCounter,50,15);
         lifesCounter=new Counter("Leben: ");
-        addObject(lifesCounter,550,15);
+        addObject(lifesCounter,1250,15);
     }
     public void act()
     {

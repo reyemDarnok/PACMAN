@@ -18,16 +18,47 @@ public class Pacman extends Actor
      */
     public void act() 
     {
-        move(1);
+        move();
         turn();
         eatDot();
         eatGhost();
         ((PacmanWorld)getWorld()).getLifesCounter().update(Integer.toString(lifes));
     }
 
+    public void move()
+    {
+        boolean canMove=false;
+        if(getRotation()==0)
+        {
+            if(getOneObjectAtOffset(35,0,Wall.class)==null)
+            {
+                canMove=true;
+            }
+        }
+        if(getRotation()==90)
+        {
+            if(getOneObjectAtOffset(0,25,Wall.class)==null)
+                canMove=true;
+        }
+        if(getRotation()==180)
+        {
+            if(getOneObjectAtOffset(-25,0,Wall.class)==null)
+                canMove=true;
+        }
+        if(getRotation()==270)
+        {
+            if(getOneObjectAtOffset(0,-25,Wall.class)==null)
+                canMove=true;
+        }
+        if(canMove)
+        {
+            move(1);
+        }
+    }
+
     /**
-        Tries to eat a ghost. Damages Pacman if no powerup was eaten 
-    **/
+    Tries to eat a ghost. Damages Pacman if no powerup was eaten 
+     **/
     public void eatGhost()
     {
         Ghost ghost= (Ghost) getOneIntersectingObject(Ghost.class);
@@ -56,8 +87,8 @@ public class Pacman extends Actor
     }
 
     /**
-        tries to eat a dot
-    **/
+    tries to eat a dot
+     **/
     public void eatDot()
     {
         Dot dot = (Dot) getOneObjectAtOffset(0,0,Dot.class);
@@ -72,8 +103,8 @@ public class Pacman extends Actor
     }
 
     /**
-        handles turning
-    **/
+    handles turning
+     **/
     public void turn()
     {
         Junction junction = (Junction) getOneObjectAtOffset(0,0,Junction.class); 
@@ -83,18 +114,38 @@ public class Pacman extends Actor
         if(Greenfoot.isKeyDown("left") && (junction != null && junction.getLeft() || getRotation()==0))
         {
             setRotation(180);
+            if(junction!=null)
+            {
+                setLocation(junction.getX(),junction.getY());
+                move(1);
+            }
         }
         if(Greenfoot.isKeyDown("right") && (junction != null && junction.getRight() || getRotation()==180))
         {
             setRotation(0);
+            if(junction!=null)
+            {
+                setLocation(junction.getX(),junction.getY());
+                move(1);
+            }
         }
         if(Greenfoot.isKeyDown("up") && (junction != null && junction.getUp()||getRotation()==90))
         {
             setRotation(270);
+            if(junction!=null)
+            {
+                setLocation(junction.getX(),junction.getY());
+                move(1);
+            }
         }
         if(Greenfoot.isKeyDown("down") && (junction != null && junction.getDown()||getRotation()==270))
         {
             setRotation(90);
+            if(junction!=null)
+            {
+                setLocation(junction.getX(),junction.getY());
+                move(1);
+            }
         }
         // Add your action code here.    
     } 
