@@ -47,8 +47,9 @@ public class PacmanWorld extends World
         addObject(new Ghost(pacman),220,100);
         addObject(new Dot(),230,100);
         addObject(new Dot(),240,100);
-        */addObject(junction,1215,125);
+         */addObject(junction,1215,125);
     }
+
     public void generateALevel()
     {
         int rand = Greenfoot.getRandomNumber(1);
@@ -57,21 +58,58 @@ public class PacmanWorld extends World
             level1();
         }
     }
-    
-    public void level1()
+
+    public void levelCreator(Actor[] object)
     {
-        for(int i=25; i<getWidth();i+=50)
+        for(int j=0;j<16;j++)
         {
-            addObject(new Wall(),i,25);
-            addObject(new Wall(),i,getHeight()-25);
-        }
-        for(int i =75; i<getHeight()-25;i+=50)
-        {
-            addObject(new Wall(),25,i);
-            addObject(new Wall(),getWidth()-25,i);
+            for(int i=0;i<26;i++)
+            {
+                if(object[i*26+j]!=null)
+                    addObject(object[i*26+j],i*50+25,j*50+25);
+            }
         }
     }
-    
+
+    public void level1()
+    {
+        Actor[] object=new Actor[26*16];
+        for(int i=0; i<26;i++)
+        {
+            object[i]=new Wall();
+            object[i+26*15]=new Wall();
+        }
+        for(int i =1; i<14;i++)
+        {
+            object[i*26]=new Wall();
+            object[i*26+13]=new Wall();
+        }
+        for(int j=1;j<4;j++)
+        {
+            for(int i=1+j*26;i<5+j*26;i++)
+            {
+                object[i]=new Wall();
+            }
+            for(int i=6+j*26;i<9+j*26;i++)
+            {
+                object[i]=new Wall();
+            }
+            for(int i=10+j*26;i<14+j*26;i++)
+            {
+                object[i]=new Wall();
+            }
+            for(int i=15+j*26;i<18+j*26;i++)
+            {
+                object[i]=new Wall();
+            }
+            for(int i=19+j*26;i<23;i++)
+            {
+                object[i]=new Wall();
+            }
+        }
+        levelCreator(object);
+    }
+
     public void prepare()
     {
         scoreCounter=new Counter("score: ");
@@ -79,23 +117,28 @@ public class PacmanWorld extends World
         lifesCounter=new Counter("Leben: ");
         addObject(lifesCounter,1250,15);
     }
+
     public void act()
     {
         scoreCounter.update(Integer.toString(score));
     }
+
     public Counter getLifesCounter()
     {
         return lifesCounter;
     }
+
     public void respawn(Ghost ghost)
     {
         ghost.setLocation(ghostSpawn[0],ghostSpawn[1]);
         ghost.stun();
     }
+
     public void respawn(Pacman pacman)
     {
         pacman.setLocation(pacmanSpawn[0],pacmanSpawn[1]);
     }
+
     public void gameOver()
     {
         showText("GAME OVER!",300,200);
