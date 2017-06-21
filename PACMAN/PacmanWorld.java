@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class MyWorld here.
+ * Die Welt des eigentlichen Spiels
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben Meyer) 
+ * @version (2017-06-21)
  */
 public class PacmanWorld extends World
 {
@@ -23,6 +23,21 @@ public class PacmanWorld extends World
     boolean ghost2AI=true;
     boolean ghost3AI=true;
     boolean ghost4AI=true;
+
+    /**
+     * PacmanWorld Konstruktor
+     *
+     * @param pacmanControls Die Kontrollen für den Pacman
+     * @param ghost1Controls Die Kontrollen für den ersten Geist
+     * @param ghost2Controls Die Kontrollen für den zweiten Geist
+     * @param ghost3Controls Die Kontrollen für den dritten Geist
+     * @param ghost4Controls Die Kontrollen für den vierten Geist
+     * @param pacmanAI Ist Pacman eine KI?
+     * @param ghost1AI Ist der erste Geist eine KI?
+     * @param ghost2AI Ist der zweite Geist eine KI?
+     * @param ghost3AI Ist der dritte Geist eine KI?
+     * @param ghost4AI Ist der vierte Geist eine KI?
+     */
     public PacmanWorld(String[] pacmanControls,String[] ghost1Controls,String[] ghost2Controls,String[] ghost3Controls,String[] ghost4Controls,boolean pacmanAI,boolean ghost1AI,boolean ghost2AI, boolean ghost3AI,boolean ghost4AI)
     {
         super(1300, 800, 1);
@@ -50,6 +65,10 @@ public class PacmanWorld extends World
          */addObject(junction,1215,125);
     }
 
+    /**
+     * erzeugt ein Level aus der Auswahl
+     *
+     */
     public void generateALevel()
     {
         int rand = Greenfoot.getRandomNumber(1);
@@ -59,6 +78,11 @@ public class PacmanWorld extends World
         }
     }
 
+    /**
+     * erzeugt ein Level
+     *
+     * @param object Eine Liste der Objekte nach ihren Positionen sortiert
+     */
     public void levelCreator(Actor[] object)
     {
         for(int j=0;j<16;j++)
@@ -71,6 +95,10 @@ public class PacmanWorld extends World
         }
     }
 
+    /**
+     * gibt die Daten für das erste Level in die Methode levelCreator()
+     *
+     */
     public void level1()
     {
         Actor[] object=new Actor[26*16];
@@ -110,6 +138,10 @@ public class PacmanWorld extends World
         levelCreator(object);
     }
 
+    /**
+     * Bereitet die Counter vor
+     *
+     */
     public void prepare()
     {
         scoreCounter=new Counter("score: ");
@@ -118,27 +150,50 @@ public class PacmanWorld extends World
         addObject(lifesCounter,1250,15);
     }
 
+    /**
+     * der scoreCounter wird aktualisisert
+     *
+     */
     public void act()
     {
         scoreCounter.update(Integer.toString(score));
     }
 
+    /**
+     * gibt eine Referenz auf den lifesCounter zurück
+     *
+     * @return Der lifesCounter
+     */
     public Counter getLifesCounter()
     {
         return lifesCounter;
     }
 
+    /**
+     * respawnt einen Geist
+     *
+     * @param ghost Der Geist der respawnt werden soll
+     */
     public void respawn(Ghost ghost)
     {
         ghost.setLocation(ghostSpawn[0],ghostSpawn[1]);
         ghost.stun();
     }
 
+    /**
+     * respawnt einen Pacman
+     *
+     * @param pacman Die Referenz des Pacmans
+     */   
     public void respawn(Pacman pacman)
     {
         pacman.setLocation(pacmanSpawn[0],pacmanSpawn[1]);
     }
 
+    /**
+     * beendet das Spiel
+     *
+     */
     public void gameOver()
     {
         showText("GAME OVER!",300,200);

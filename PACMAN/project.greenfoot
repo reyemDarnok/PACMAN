@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Wed Jun 21 10:24:47 CEST 2017
+#Wed Jun 21 10:30:31 CEST 2017
 target2.width=80
 editor.fx.0.height=700
 target8.name=Button
@@ -69,7 +69,7 @@ dependency3.type=UsesDependency
 target6.type=ClassTarget
 target2.typeParameters=
 target2.height=50
-editor.swing.0.height=1010
+editor.swing.0.height=0
 dependency11.to=Button
 target9.typeParameters=
 dependency11.from=Menu
@@ -99,7 +99,7 @@ class.AIpacman.superclass=Pacman
 dependency9.from=Ghost
 readme.name=@README
 target13.typeParameters=
-editor.swing.0.width=841
+editor.swing.0.width=0
 target6.name=PlayerGhost
 target9.height=50
 target12.y=10
