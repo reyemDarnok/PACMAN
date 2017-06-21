@@ -3,8 +3,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class Menu here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben Konrad Meyer) 
+ * @version (2017-06-21)
  */
 public class Menu extends World
 {
@@ -52,6 +52,10 @@ public class Menu extends World
         act();
     }
 
+    /**
+     * verwaltet das Menü
+     *
+     */
     public void act()
     {
         if(clickCooldown>0)
@@ -70,6 +74,10 @@ public class Menu extends World
         }
     }
 
+    /**
+     * zeigt die Knöpfe des Hauptmenüs
+     *
+     */
     private void showMain()
     {
         removeAllObjects();
@@ -79,6 +87,10 @@ public class Menu extends World
         addObject(new Button(new GreenfootImage("Hilfe",50,null,null),this,3,50,50),450,300);
     }
 
+    /**
+     * zeigt die "Knöpfe" (sie haben, außer der Zurückknopf, keine Funktion sondern sind einfach nur Text) der Hilfe
+     *
+     */
     private void showHelp()
     {
         removeAllObjects();
@@ -90,6 +102,12 @@ public class Menu extends World
         addObject(new Button(new GreenfootImage("Zurück",getHeight()/20,null,null),this,29),550,390);
     }
 
+    
+    
+    /**
+     * zeigt die Knöpfe des Menüs
+     *
+     */
     private void showMenu()
     {
         //creating the identifiers (adding a new Button, with a new Image thats some short text, giving it an identifier and ordering it in a columm)
