@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PACMAN here.
+ * The pacman
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben Konrad Meyer) 
+ * @version (2017-06-26)
  */
 public class Pacman extends Actor
 {
@@ -13,8 +13,12 @@ public class Pacman extends Actor
     //whether or not the pacman can eat ghosts
     public boolean powerup;
     public int remaining;
-    
+    //the controls that were assigned in the menu
     private String[] controls=new String[4];
+    /**
+        constructor of the class Pacman
+        @param controls the four directional controls
+    */
     public Pacman(String[] controls)
     {
         this.controls=controls;
@@ -39,7 +43,9 @@ public class Pacman extends Actor
         }
         ((PacmanWorld)getWorld()).getLifesCounter().update(Integer.toString(lifes));
     }
-
+    /**
+        checks whether the Pacman can move and does so if possible
+    */
     public void move()
     {
         if(getRotation()==0)
@@ -137,6 +143,5 @@ public class Pacman extends Actor
         {
             setRotation(90);
         }
-        // Add your action code here.    
     } 
 }
