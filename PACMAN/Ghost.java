@@ -9,8 +9,11 @@ public class Ghost extends Actor
 {
     //is the ghost vulnerable?
     private boolean blinking;
+    //and how long has he been blinking
+    private int intervall;
     //reference to the pacman for navigation purposes
     private Pacman pacman;
+    //Ghost number one, two, three or four
     protected int number;
     //respawn waiting
     private int wait;
@@ -43,6 +46,27 @@ public class Ghost extends Actor
         } else {
             wait--;
         }
+        blink();
+    }
+
+    public void blink()
+    {
+        if(pacman.getPowerup()&&!blinking)
+        {
+            blinking==true;
+            intervall=0;
+        } else if(blinking){
+            if(intervall++ % 20 <10)
+            {
+                setImage(images/junction.png); // the junction is a single pixel, effectively the ghost vanishes
+            } else {
+                setImage(images/Ghost.jpg);
+            }
+        } else if(!blinking){
+            setImage(images/Ghost.jpg);
+            intervall=0;
+        }
+        
     }
 
     public void stun()
