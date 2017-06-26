@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Button here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben Konrad Meyer) 
+ * @version (2017-06-26)
  */
 public class Button extends Actor
 {
@@ -12,13 +12,26 @@ public class Button extends Actor
     private int number;
     private int height=5;
     private int width=5;
+    /**
+        constructor for a button. Hitbox size defaults to a 5 units square
+        @param image the image of the Button
+        @param world needed to tell the world that the button has been clicked
+        @param number an identifier of what the button does (1 is starting the game for example). 0 is reserved for doing nothing
+    */
     public Button(GreenfootImage image,Menu world,int number)
     {
         setImage(image);
         this.world=world;
         this.number=number;
     }
-    
+    /**
+        constructor for a button
+        @param image the image of the Button
+        @param world needed to tell the world that the button has been clicked
+        @param number an identifier of what the button does (1 is starting the game for example). 0 is reserved for doing nothing
+        @param height the height of the Buttons hitbox (the sprite is not used because it glitched around for some reason)
+        @param width the width of the Buttons hitbox (the sprite is not used because it glitched around for some reason)
+    */
     public Button(GreenfootImage image,Menu world,int number,int height, int width)
     {
         setImage(image);
@@ -41,6 +54,9 @@ public class Button extends Actor
         }
     }   
 
+    /**
+        checks wether this button is clicked inside its hitbox or not
+    */
     public boolean thisIsClicked()
     {
         boolean result=false;
@@ -58,8 +74,3 @@ public class Button extends Actor
         }
         return result;
     }
-
-    public void test()
-    {
-        world.buttonClick(number);}
-}
