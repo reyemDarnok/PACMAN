@@ -12,6 +12,7 @@ public class Pacman extends Actor
     public int lifes = 3;
     //whether or not the pacman can eat ghosts
     public boolean powerup;
+    public int remaining;
     
     private String[] controls=new String[4];
     public Pacman(String[] controls)
@@ -28,6 +29,14 @@ public class Pacman extends Actor
         turn();
         eatDot();
         eatGhost();
+        if(powerup)
+        {
+            remaining--;
+        }
+        if(remaining==0)
+        {
+            powerup = false;
+        }
         ((PacmanWorld)getWorld()).getLifesCounter().update(Integer.toString(lifes));
     }
 
@@ -98,6 +107,8 @@ public class Pacman extends Actor
             pW.score++;
             pW.dots--;
             pW.removeObject(dot);
+            if(dot.state==21)
+                powerup=true;
         }
     }
 
