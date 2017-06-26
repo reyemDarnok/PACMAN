@@ -1,27 +1,31 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 /**
- * Write a description of class Menu here.
+ * The Menu for the game
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben Konrad Meyer) 
+ * @version (2017-06-26)
  */
 public class Menu extends World
 {
+    //which state has the menu
     String status = "main"; 
+    //the time needed until something can be clicked again
     private int clickCooldown=20;
+    //the controls for the various actors
     String[] pacmanControls = new String[4];
     String[] ghost1Controls = new String[4];
     String[] ghost2Controls = new String[4];
     String[] ghost3Controls = new String[4];
     String[] ghost4Controls = new String[4];
+    //whether the actors are steered by AI or not
     boolean pacmanAI=false;
     boolean ghost1AI=true;
     boolean ghost2AI=true;
     boolean ghost3AI=true;
     boolean ghost4AI=true;
     /**
-     * Constructor for objects of class Menu.
+     * Constructor for objects of class Menu. Sets Default values for the controls and starts the game
      * 
      */
     public Menu()
@@ -50,7 +54,9 @@ public class Menu extends World
         ghost4Controls[3] = "6";
         Greenfoot.start();
     }
-
+    /**
+        manages the click cooldown and calls another function for showing the menu
+    */
     public void act()
     {
         if(clickCooldown>0)
@@ -69,6 +75,9 @@ public class Menu extends World
         }
     }
 
+    /**
+        The funciton to show the main screen
+    */
     public void showMain()
     {
         removeAllObjects();
@@ -77,7 +86,9 @@ public class Menu extends World
         addObject(new Button(new GreenfootImage("Menü",50,null,null),this,2,50,50),150,300);
         addObject(new Button(new GreenfootImage("Hilfe",50,null,null),this,3,50,50),450,300);
     }
-
+    /**
+        The function to show the help screen
+    */
     public void showHelp()
     {
         removeAllObjects();
@@ -85,12 +96,15 @@ public class Menu extends World
         addObject(new Button(new GreenfootImage("es sei denn, er hat ein Powerup, dann kann er die Geister fressen.",20,null,null),this,0,100,100),300,60);
         addObject(new Button(new GreenfootImage("Zurück",getHeight()/20,null,null),this,29),550,390);
     }
-
+    /**
+        The function to show the Menu
+    */
     public void showMenu()
     {
 
         //creating the identifiers (adding a new Button, with a new Image thats some short text, giving it an identifier and ordering it in a columm)
         removeAllObjects();
+        //I know this looks like you should be able to get this in one (or more) loops, but sadly thats not possible
         addObject(new Button(new GreenfootImage("Pacman oben:",getHeight()/20,null,null),this,4),75,10);
         addObject(new Button(new GreenfootImage("Pacman links:",getHeight()/20,null,null),this,5),75,30);
         addObject(new Button(new GreenfootImage("Pacman unten:",getHeight()/20,null,null),this,6),75,50);
@@ -172,7 +186,9 @@ public class Menu extends World
         addObject(new Button(new GreenfootImage("Zurück",getHeight()/20,null,null),this,29),550,390);
 
     }
-
+    /**
+        A wrapper for Greenfoot.ask().
+    */
     public String ask(String question)
     {
         String answer="";
@@ -181,6 +197,9 @@ public class Menu extends World
         return answer;
     }
 
+    /**
+        removes all Objects currently on the screen
+    */
     public void removeAllObjects()
     {
         for(Object o : getObjects(null))
@@ -190,6 +209,10 @@ public class Menu extends World
         }
     }
 
+    /**
+        This function is called by the buttons. I governs the response to the click
+        @param number The identifier of the button
+    */
     public void buttonClick(int number)
     {
         if(clickCooldown==0 && number==1)
@@ -308,24 +331,36 @@ public class Menu extends World
             status="main";
         }
     }
-
+    /**
+        starts the game
+    */
     public void startGame()
     {
+        //all those settings have to be given to the new World
         Greenfoot.setWorld(new PacmanWorld(pacmanControls,ghost1Controls,ghost2Controls,ghost3Controls,ghost4Controls,pacmanAI,ghost1AI,ghost2AI,ghost3AI,ghost4AI));
     }
 
+    /**
+        changes the menus setting to the settings
+    */
     public void goToMenu()
     {
         status="menu";
         removeAllObjects();
     }
 
+    /**
+        changes the menus setting to the help
+    */
     public void goToHelp()
     {
         status="help";
         removeAllObjects();
     }
 
+    /**
+        changes the menus setting to the main screen
+    */
     public void goToMain()
     {
         status="main";
