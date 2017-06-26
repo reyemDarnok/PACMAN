@@ -16,7 +16,7 @@ public class Ghost extends Actor
     //Ghost number one, two, three or four
     protected int number;
     //respawn waiting
-    private int wait;
+    protected int wait;
     /**
     Only for collision testing. Breaks navigation. DEPRECATED
      **/
