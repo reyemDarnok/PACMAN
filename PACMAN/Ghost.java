@@ -1,9 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
- * Write a description of class Ghost here.
+ * The Ghost chasing the Pacman
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben Konrad Meyer) 
+ * @version (2017-06-26)
  */
 public class Ghost extends Actor
 {
@@ -26,6 +26,7 @@ public class Ghost extends Actor
     /**
     Main constructor.
     @param pacman A reference to the pacman that's to be hunted
+    @param number Is this Ghost 1, 2, 3 or 4
      **/
     public Ghost(Pacman pacman,int number)
     {
@@ -49,6 +50,9 @@ public class Ghost extends Actor
         blink();
     }
 
+    /**
+        governs blinking
+    */
     public void blink()
     {
         if(pacman.getPowerup()&&!blinking)
@@ -69,10 +73,16 @@ public class Ghost extends Actor
         
     }
 
+    /**
+        stuns the Ghost for 200 ticks
+    */
     public void stun()
     {
         wait=200;
     }
+    /**
+        checks if the ghost can move and does so if possible
+    */ 
      public void move()
     {
         if(getRotation()==0)
