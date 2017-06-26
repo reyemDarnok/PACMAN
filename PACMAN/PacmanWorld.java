@@ -1,31 +1,53 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 /**
- * Write a description of class MyWorld here.
+ * The game world
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben Konrad Meyer) 
+ * @version (2017-06-26)
  */
 public class PacmanWorld extends World
 {
+    //keeping track for removeRemovables()
     public ArrayList<Actor> removableObjects = new ArrayList<>();
-    
+    //the score
     public int score;
+    //how many dots there are left on the current map
     public int dots;
+    //the two counters
     private Counter scoreCounter;
     private Counter lifesCounter;
+    //The spawnpoints
     public int[] pacmanSpawn = new int[2];
-    public int[] ghostSpawn = new int[2];
+    public int[] ghost1Spawn = new int[2];
+    public int[] ghost2Spawn = new int[2];
+    public int[] ghost3Spawn = new int[2];
+    public int[] ghost4Spawn = new int[2];
+    //the controls (saved here to pass them on to the actors later)
     String[] pacmanControls = new String[4];
     String[] ghost1Controls = new String[4];
     String[] ghost2Controls = new String[4];
     String[] ghost3Controls = new String[4];
     String[] ghost4Controls = new String[4];
+    //Are the Actors AIs or not 
     boolean pacmanAI=false;
     boolean ghost1AI=true;
     boolean ghost2AI=true;
     boolean ghost3AI=true;
     boolean ghost4AI=true;
+    /**
+        Constructor for a gameworld
+        @param pacmanControls the Pacmans controls
+        @param ghost1controls the first ghosts controls
+        @param ghost2controls the second ghosts controls
+        @param ghost3controls the third ghosts controls
+        @param ghost4controls the fourth ghosts controls
+        @param pacmanAI is the Pacman controlled by AI?
+        @param ghost1AI is the first ghost controlled by AI?
+        @param ghost2AI is the second ghost controlled by AI?
+        @param ghost3AI is the third ghost controlled by AI?
+        @param ghost4AI is the fourth ghost controlled by AI?
+    */
     public PacmanWorld(String[] pacmanControls,String[] ghost1Controls,String[] ghost2Controls,String[] ghost3Controls,String[] ghost4Controls,boolean pacmanAI,boolean ghost1AI,boolean ghost2AI, boolean ghost3AI,boolean ghost4AI)
     {
         super(1000, 800, 1);
@@ -43,6 +65,9 @@ public class PacmanWorld extends World
         makeLevel();
     }
     
+    /**
+        removes all tiles of the game (leaves the counters alone)
+    */
     public void removeRemovables()
     {
         
@@ -53,6 +78,9 @@ public class PacmanWorld extends World
         removableObjects.clear();
     }
 
+    /**
+        picks a prewritten level and generates it
+    */
     public void makeLevel()
     {
         removeRemovables();
@@ -60,7 +88,10 @@ public class PacmanWorld extends World
         if(level==0)
             level1();
     }
-
+    
+    /**
+        creates the first level
+    */
     public void level1()
     {
         String[][] layout= new String[19][14];
@@ -77,7 +108,10 @@ public class PacmanWorld extends World
         construct(layout);
     }
     
-
+    /**
+        constructs a level
+        @layout what is at which place? The first index is the x coordinate, the second the y coordinate
+    */
     public void construct(String[][] layout)
     {
         int numberOfGhost=1;
@@ -107,6 +141,26 @@ public class PacmanWorld extends World
                 } else if(layout[x][y]=="ghost")
                 {
                     toAdd=new Ghost(pacman,numberOfGhost++);
+                    if(numberOfGhost==1)
+                    {
+                        ghost1Spawn[0]==x;
+                        ghost1Spawn[1]==y;
+                    }
+                    if(numberOfGhost==2)
+                    {
+                        ghost2Spawn[0]==x;
+                        ghost2Spawn[1]==y;
+                    }
+                    if(numberOfGhost==3)
+                    {
+                        ghost3Spawn[0]==x;
+                        ghost3Spawn[1]==y;
+                    }
+                    if(numberOfGhost==4)
+                    {
+                        ghost4Spawn[0]==x;
+                        ghost4Spawn[1]==y;
+                    }
                     if(numberOfGhost==1&&!ghost1AI||numberOfGhost==2&&!ghost2AI||numberOfGhost==3&&!ghost3AI||numberOfGhost==4&&!ghost4AI)
                     {
                         if(numberOfGhost==1)
@@ -134,7 +188,9 @@ public class PacmanWorld extends World
             }
         }
     }
-
+    /**
+        places the counters in the world
+    */
     public void prepare()
     {
         scoreCounter=new Counter("score: ");
@@ -143,6 +199,9 @@ public class PacmanWorld extends World
         addObject(lifesCounter,900,30);
     }
 
+    /**
+        updates the scorecounter and checks whether there has to be a new level
+    */
     public void act()
     {
         scoreCounter.update(Integer.toString(score));
@@ -152,22 +211,43 @@ public class PacmanWorld extends World
         }
     }
 
+    /**
+        gives a reference to the lifesCounter
+    */
     public Counter getLifesCounter()
     {
         return lifesCounter;
     }
 
+    /**
+        respawns the given ghost to the place where he first was and stuns him
+        @param ghost the ghost that should respawn
+    */
     public void respawn(Ghost ghost)
     {
-        ghost.setLocation(ghostSpawn[0],ghostSpawn[1]);
+        if(ghost.number()==1)
+        ghost.setLocation(ghost1Spawn[0]*50+50,ghost1Spawn[1]*50+50);
+        if(ghost.number()==2)
+        ghost.setLocation(ghost2Spawn[0]*50+50,ghost2Spawn[1]*50+50);
+        if(ghost.number()==3)
+        ghost.setLocation(ghost3Spawn[0]*50+50,ghost3Spawn[1]*50+50);
+        if(ghost.number()==4)
+        ghost.setLocation(ghost4Spawn[0]*50+50,ghost4Spawn[1]*50+50);
         ghost.stun();
     }
-
+    
+    /**
+        respawns the pacman to his first position 
+        @param pacman the Pacman
+    */
     public void respawn(Pacman pacman)
     {
         pacman.setLocation(pacmanSpawn[0]*50+50,pacmanSpawn[1]*50+50);
     }
 
+    /**
+        ends the game
+    */
     public void gameOver()
     {
         showText("GAME OVER!",300,200);
