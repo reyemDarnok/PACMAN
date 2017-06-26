@@ -33,6 +33,13 @@ public class Ghost extends Actor
         this.pacman = pacman;
         this.number=number;
     }
+    /**
+        gives the ghosts number
+    */
+    public int getNumber()
+    {
+        return number
+    }
 
     /**
      * Act - do whatever the Ghost wants to do. This method is called whenever
