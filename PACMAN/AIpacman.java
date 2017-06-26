@@ -3,11 +3,14 @@ import java.util.ArrayList;
 /**
  * Write a description of class AIpacman here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben konrad Meyer) 
+ * @version (2017-06-26)
  */
 public class AIpacman extends Pacman
 {
+    /**
+      constructor for an AIpacman. Only there because it has to for syntactical reasons  
+    */
     public AIpacman()
     {super(new String[4]);}
     
@@ -23,6 +26,9 @@ public class AIpacman extends Pacman
         eatGhost();
         ((PacmanWorld)getWorld()).getLifesCounter().update(Integer.toString(lifes));
     }  
+    /**
+        checks wether the Pacman can move and does so when possible
+    */
      public void move()
     {
         if(getRotation()==0)
@@ -94,7 +100,7 @@ public class AIpacman extends Pacman
     }
 
     /**
-        handles turning
+        handles turning (randomly turns in a direction when at a junction)
     **/
     public void turn()
     {
