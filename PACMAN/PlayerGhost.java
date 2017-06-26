@@ -15,10 +15,16 @@ public class PlayerGhost extends Ghost
      */
     public void act() 
     {
-        move();
-        turn();
+        if(wait<=0)
+        {
+            move();
+            turn();
+        } else {
+            wait--;
+        }
+        blink();
+    }
 
-    }   
     
     public PlayerGhost(int number,String[] controls)
     {
