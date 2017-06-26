@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=AIpacman
+comment0.text=\n\ Write\ a\ description\ of\ class\ AIpacman\ here.\n\ \n\ @author\ (Ben\ konrad\ Meyer)\ \n\ @version\ (2017-06-26)\n
+comment1.params=
+comment1.target=AIpacman()
+comment1.text=\n\ \ \ \ \ \ constructor\ for\ an\ AIpacman.\ Only\ there\ because\ it\ has\ to\ for\ syntactical\ reasons\ \ \n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ do\ whatever\ the\ AIpacman\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment3.params=
+comment3.target=void\ move()
+comment3.text=\n\ \ \ \ \ \ \ \ checks\ wether\ the\ Pacman\ can\ move\ and\ does\ so\ when\ possible\n
+comment4.params=
+comment4.target=void\ eatGhost()
+comment4.text=\n\ \ \ \ \ \ \ \ Tries\ to\ eat\ a\ ghost.\ Damages\ Pacman\ if\ no\ powerup\ was\ eaten\ \n
+comment5.params=
+comment5.target=void\ eatDot()
+comment5.text=\n\ \ \ \ \ \ \ \ tries\ to\ eat\ a\ dot\n
+comment6.params=
+comment6.target=void\ turn()
+comment6.text=\n\ \ \ \ \ \ \ \ handles\ turning\ (randomly\ turns\ in\ a\ direction\ when\ at\ a\ junction)\n
+numComments=7

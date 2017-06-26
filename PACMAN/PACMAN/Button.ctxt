@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Button
+comment0.text=\n\ Write\ a\ description\ of\ class\ Button\ here.\n\ \n\ @author\ (Ben\ Konrad\ Meyer)\ \n\ @version\ (2017-06-26)\n
+comment1.params=image\ world\ number
+comment1.target=Button(greenfoot.GreenfootImage,\ ButtonHosts,\ int)
+comment1.text=\n\ \ \ \ \ \ \ \ constructor\ for\ a\ button.\ Hitbox\ size\ defaults\ to\ a\ 5\ units\ square\n\ \ \ \ \ \ \ \ @param\ image\ the\ image\ of\ the\ Button\n\ \ \ \ \ \ \ \ @param\ world\ needed\ to\ tell\ the\ world\ that\ the\ button\ has\ been\ clicked\n\ \ \ \ \ \ \ \ @param\ number\ an\ identifier\ of\ what\ the\ button\ does\ (1\ is\ starting\ the\ game\ for\ example).\ 0\ is\ reserved\ for\ doing\ nothing\n
+comment2.params=image\ world\ number\ height\ width
+comment2.target=Button(greenfoot.GreenfootImage,\ ButtonHosts,\ int,\ int,\ int)
+comment2.text=\n\ \ \ \ \ \ \ \ constructor\ for\ a\ button\n\ \ \ \ \ \ \ \ @param\ image\ the\ image\ of\ the\ Button\n\ \ \ \ \ \ \ \ @param\ world\ needed\ to\ tell\ the\ world\ that\ the\ button\ has\ been\ clicked\n\ \ \ \ \ \ \ \ @param\ number\ an\ identifier\ of\ what\ the\ button\ does\ (1\ is\ starting\ the\ game\ for\ example).\ 0\ is\ reserved\ for\ doing\ nothing\n\ \ \ \ \ \ \ \ @param\ height\ the\ height\ of\ the\ Buttons\ hitbox\ (the\ sprite\ is\ not\ used\ because\ it\ glitched\ around\ for\ some\ reason)\n\ \ \ \ \ \ \ \ @param\ width\ the\ width\ of\ the\ Buttons\ hitbox\ (the\ sprite\ is\ not\ used\ because\ it\ glitched\ around\ for\ some\ reason)\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\n\ Act\ -\ do\ whatever\ the\ Button\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment4.params=
+comment4.target=boolean\ thisIsClicked()
+comment4.text=\n\ \ \ \ \ \ \ \ checks\ wether\ this\ button\ is\ clicked\ inside\ its\ hitbox\ or\ not\n
+numComments=5

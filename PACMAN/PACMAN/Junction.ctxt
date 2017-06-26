@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Junction
+comment0.text=\n\ An\ Object\ that\ needs\ to\ be\ placed\ at\ every\ turn\ so\ that\ the\ Actors\ can\ turn\ there\n\ \n\ @author\ (Ben\ Konrad\ Meyer)\ \n\ @version\ (2017-06-26)\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\n\ checks\ where\ there\ are\ paths\ and\ adjusts\ the\ four\ attributes\ accordingly\n
+comment2.params=
+comment2.target=boolean\ getUp()
+comment2.text=\n\ \ \ \ \ \ \ \ returns\ the\ value\ of\ up\n
+comment3.params=
+comment3.target=boolean\ getDown()
+comment3.text=\n\ \ \ \ \ \ \ \ returns\ the\ value\ of\ down\n
+comment4.params=
+comment4.target=boolean\ getRight()
+comment4.text=\n\ \ \ \ \ \ \ \ returns\ the\ value\ of\ right\n
+comment5.params=
+comment5.target=boolean\ getLeft()
+comment5.text=\n\ \ \ \ \ \ \ \ returns\ the\ value\ of\ left\n
+numComments=6

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Counter
+comment0.text=\n\ Is\ a\ counter.\ Used\ for\ counting\ lives\ and\ the\ score\ in\ this\ scenario\n\ \n\ @author\ (Ben\ Konrad\ Meyer)\ \n\ @version\ (2017-06-26)\n
+comment1.params=prefix
+comment1.target=Counter(java.lang.String)
+comment1.text=\n\ \ \ \ constructor\ for\ a\ Counter\n\ \ \ \ @param\ prefix\ What\ is\ standing\ before\ the\ number\n
+comment2.params=text
+comment2.target=void\ update(java.lang.String)
+comment2.text=\n\ \ \ \ update\ the\ counters\ look\n\ \ \ \ @param\ text\ the\ new\ text\ to\ come\ after\ the\ prefix\n
+numComments=3

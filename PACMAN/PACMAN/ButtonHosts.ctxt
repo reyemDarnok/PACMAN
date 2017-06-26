@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=ButtonHosts
+comment0.text=\n\ This\ Interface\ enables\ multiple\ wordls\ to\ host\ buttons\n\ \n\ @author\ (Ben\ Konrad\ Meyer)\ \n\ @version\ (2017-06-26)\n
+comment1.params=number
+comment1.target=void\ buttonClick(int)
+numComments=2

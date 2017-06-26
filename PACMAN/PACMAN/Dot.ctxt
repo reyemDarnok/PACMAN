@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Dot
+comment0.text=\n\ exists\ to\ be\ eaten\ by\ the\ Pacman.\n\ \n\ @author\ (Ben\ Konrad\ Meyer)\ \n\ @version\ (2017-06-26)\n
+comment1.params=world
+comment1.target=void\ addedToWorld(greenfoot.World)
+comment1.text=\n\ \ \ \ \ \ \ \ When\ the\ Dot\ is\ added\ to\ the\ wordl\ he\ gets\ a\ random\ state\ assigned.\ Everything\ not\ being\ 21\ is\ normal\n\ \ \ \ \ \ \ \ @param\ world\ mandatory\ for\ method\ identification\ by\ Greenfoot\n
+numComments=2

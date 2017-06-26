@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Pacman
+comment0.text=\n\ The\ pacman\n\ \n\ @author\ (Ben\ Konrad\ Meyer)\ \n\ @version\ (2017-06-26)\n
+comment1.params=controls
+comment1.target=Pacman(java.lang.String[])
+comment1.text=\n\ \ \ \ \ \ \ \ constructor\ of\ the\ class\ Pacman\n\ \ \ \ \ \ \ \ @param\ controls\ the\ four\ directional\ controls\n
+comment2.params=
+comment2.target=boolean\ getPowerup()
+comment2.text=\n\ gives\ powerup\n\n\ @return\ the\ value\ of\ powerup\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\n\ Act\ -\ do\ whatever\ the\ PACMAN\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment4.params=
+comment4.target=void\ move()
+comment4.text=\n\ \ \ \ \ \ \ \ checks\ whether\ the\ Pacman\ can\ move\ and\ does\ so\ if\ possible\n
+comment5.params=
+comment5.target=void\ eatGhost()
+comment5.text=\n\ \ \ \ \ \ \ \ Tries\ to\ eat\ a\ ghost.\ Damages\ Pacman\ if\ no\ powerup\ was\ eaten\ \n
+comment6.params=
+comment6.target=void\ eatDot()
+comment6.text=\n\ \ \ \ \ \ \ \ tries\ to\ eat\ a\ dot\n
+comment7.params=
+comment7.target=void\ turn()
+comment7.text=\n\ \ \ \ \ \ \ \ handles\ turning\n
+numComments=8
