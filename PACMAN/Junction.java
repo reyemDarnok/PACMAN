@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Junction here.
+ * An Object that needs to be placed at every turn so that the Actors can turn there
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben Konrad Meyer) 
+ * @version (2017-06-26)
  */
 public class Junction extends Actor
 {
@@ -14,8 +14,7 @@ public class Junction extends Actor
     public boolean left;
     public boolean right;
     /**
-     * Act - do whatever the Junction wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * checks where there are paths and adjusts the four attributes accordingly
      */
     public void act() 
     {
@@ -24,20 +23,47 @@ public class Junction extends Actor
         {
             right=true;
         }
+         wall = (Wall) getOneObjectAtOffset(0,50,Wall.class);
+        if(wall == null)
+        {
+            down=true;
+        }
+         wall = (Wall) getOneObjectAtOffset(0,-50,Wall.class);
+        if(wall == null)
+        {
+            up=true;
+        }
+         wall = (Wall) getOneObjectAtOffset(-50,50,Wall.class);
+        if(wall == null)
+        {
+            left=true;
+        }
         // Add your action code here.
     }    
+    /**
+        returns the value of up
+    */
     public boolean getUp()
     {
         return up;
     }
+    /**
+        returns the value of down
+    */
     public boolean getDown()
     {
         return down;
     }
+    /**
+        returns the value of right
+    */
     public boolean getRight()
     {
         return right;
     }
+    /**
+        returns the value of left
+    */
     public boolean getLeft()
     {
         return left;
