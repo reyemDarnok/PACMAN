@@ -12,6 +12,12 @@ public class Pacman extends Actor
     public int lifes = 3;
     //whether or not the pacman can eat ghosts
     public boolean powerup;
+    
+    private String[] controls=new String[4];
+    public Pacman(String[] controls)
+    {
+        this.controls=controls;
+    }
     /**
      * Act - do whatever the PACMAN wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -27,38 +33,30 @@ public class Pacman extends Actor
 
     public void move()
     {
-        boolean canMove=false;
         if(getRotation()==0)
         {
-            if(getOneObjectAtOffset(35,0,Wall.class)==null)
-            {
-                canMove=true;
-            }
+            if(getOneObjectAtOffset(25,0,Wall.class)==null)
+                move(1);
         }
-        if(getRotation()==90)
-        {
-            if(getOneObjectAtOffset(0,25,Wall.class)==null)
-                canMove=true;
-        }
-        if(getRotation()==180)
-        {
-            if(getOneObjectAtOffset(-25,0,Wall.class)==null)
-                canMove=true;
-        }
-        if(getRotation()==270)
+         if(getRotation()==90)
         {
             if(getOneObjectAtOffset(0,-25,Wall.class)==null)
-                canMove=true;
+                move(1);
         }
-        if(canMove)
+         if(getRotation()==180)
         {
-            move(1);
+            if(getOneObjectAtOffset(-25,0,Wall.class)==null)
+                move(1);
+        }
+         if(getRotation()==270)
+        {
+            if(getOneObjectAtOffset(0,25,Wall.class)==null)
+                move(1);
         }
     }
-
     /**
-    Tries to eat a ghost. Damages Pacman if no powerup was eaten 
-     **/
+        Tries to eat a ghost. Damages Pacman if no powerup was eaten 
+    **/
     public void eatGhost()
     {
         Ghost ghost= (Ghost) getOneIntersectingObject(Ghost.class);
@@ -87,8 +85,8 @@ public class Pacman extends Actor
     }
 
     /**
-    tries to eat a dot
-     **/
+        tries to eat a dot
+    **/
     public void eatDot()
     {
         Dot dot = (Dot) getOneObjectAtOffset(0,0,Dot.class);
@@ -98,54 +96,35 @@ public class Pacman extends Actor
             //get a point and kill the dot
             PacmanWorld pW = (PacmanWorld) getWorld();
             pW.score++;
+            pW.dots--;
             pW.removeObject(dot);
         }
     }
 
     /**
-    handles turning
-     **/
+        handles turning
+    **/
     public void turn()
     {
         Junction junction = (Junction) getOneObjectAtOffset(0,0,Junction.class); 
         //if Pacman can turn left and the player wants to do so, do so. And the same for the other directions
         //he can do so if there is a) a junction that has the right direction available or 
         //b) it would be an u-turn
-        if(Greenfoot.isKeyDown("left") && (junction != null && junction.getLeft() || getRotation()==0))
+        if(Greenfoot.isKeyDown(controls[1]) && (junction != null && junction.getLeft() || getRotation()==0))
         {
             setRotation(180);
-            if(junction!=null)
-            {
-                setLocation(junction.getX(),junction.getY());
-                move(1);
-            }
         }
-        if(Greenfoot.isKeyDown("right") && (junction != null && junction.getRight() || getRotation()==180))
+        if(Greenfoot.isKeyDown(controls[3]) && (junction != null && junction.getRight() || getRotation()==180))
         {
             setRotation(0);
-            if(junction!=null)
-            {
-                setLocation(junction.getX(),junction.getY());
-                move(1);
-            }
         }
-        if(Greenfoot.isKeyDown("up") && (junction != null && junction.getUp()||getRotation()==90))
+        if(Greenfoot.isKeyDown(controls[0]) && (junction != null && junction.getUp()||getRotation()==90))
         {
             setRotation(270);
-            if(junction!=null)
-            {
-                setLocation(junction.getX(),junction.getY());
-                move(1);
-            }
         }
-        if(Greenfoot.isKeyDown("down") && (junction != null && junction.getDown()||getRotation()==270))
+        if(Greenfoot.isKeyDown(controls[2]) && (junction != null && junction.getDown()||getRotation()==270))
         {
             setRotation(90);
-            if(junction!=null)
-            {
-                setLocation(junction.getX(),junction.getY());
-                move(1);
-            }
         }
         // Add your action code here.    
     } 

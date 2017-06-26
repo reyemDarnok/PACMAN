@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Menu
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Menu\ here.\r\n\ \r\n\ @author\ (Ben\ Konrad\ Meyer)\ \r\n\ @version\ (2017-06-21)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Menu\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Menu()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Menu.\r\n\ \r\n
@@ -12,16 +12,12 @@ comment12.params=
 comment12.target=void\ goToMain()
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ verwaltet\ das\ Men\u00FC\r\n\r\n
 comment3.params=
 comment3.target=void\ showMain()
-comment3.text=\r\n\ zeigt\ die\ Kn\u00F6pfe\ des\ Hauptmen\u00FCs\r\n\r\n
 comment4.params=
 comment4.target=void\ showHelp()
-comment4.text=\r\n\ zeigt\ die\ "Kn\u00F6pfe"\ (sie\ haben,\ au\u00DFer\ der\ Zur\u00FCckknopf,\ keine\ Funktion\ sondern\ sind\ einfach\ nur\ Text)\ der\ Hilfe\r\n\r\n
 comment5.params=
 comment5.target=void\ showMenu()
-comment5.text=\r\n\ zeigt\ die\ Kn\u00F6pfe\ des\ Men\u00FCs\r\n\r\n
 comment6.params=question
 comment6.target=java.lang.String\ ask(java.lang.String)
 comment7.params=

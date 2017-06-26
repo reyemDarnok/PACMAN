@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.awt.Color;
 /**
  * Write a description of class Counter here.
  * 
@@ -12,10 +12,11 @@ public class Counter extends Actor
     public Counter(String prefix)
     {
         this.prefix=prefix;
+                setImage(new GreenfootImage(prefix+"3",30,Color.WHITE,null));
     }
     public void update(String text)
     {
-        setImage(new GreenfootImage(prefix+text,30,null,null));
+        setImage(new GreenfootImage(prefix+text,30,Color.WHITE,null));
     }
     /**
      * Act - do whatever the Counter wants to do. This method is called whenever

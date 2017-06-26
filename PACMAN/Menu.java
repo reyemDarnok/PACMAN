@@ -3,8 +3,8 @@ import java.util.ArrayList;
 /**
  * Write a description of class Menu here.
  * 
- * @author (Ben Konrad Meyer) 
- * @version (2017-06-21)
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class Menu extends World
 {
@@ -28,7 +28,6 @@ public class Menu extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1);
-        Greenfoot.start();
         pacmanControls[0] = "w"; 
         pacmanControls[1] = "a";
         pacmanControls[2] = "s"; 
@@ -49,13 +48,9 @@ public class Menu extends World
         ghost4Controls[1] = "4";
         ghost4Controls[2] = "5";
         ghost4Controls[3] = "6";
-        act();
+        Greenfoot.start();
     }
 
-    /**
-     * verwaltet das Menü
-     *
-     */
     public void act()
     {
         if(clickCooldown>0)
@@ -74,11 +69,7 @@ public class Menu extends World
         }
     }
 
-    /**
-     * zeigt die Knöpfe des Hauptmenüs
-     *
-     */
-    private void showMain()
+    public void showMain()
     {
         removeAllObjects();
         addObject(new Button(new GreenfootImage("Eat'em all!",100,null,null),this,1,100,100),300,100);
@@ -87,29 +78,17 @@ public class Menu extends World
         addObject(new Button(new GreenfootImage("Hilfe",50,null,null),this,3,50,50),450,300);
     }
 
-    /**
-     * zeigt die "Knöpfe" (sie haben, außer der Zurückknopf, keine Funktion sondern sind einfach nur Text) der Hilfe
-     *
-     */
-    private void showHelp()
+    public void showHelp()
     {
         removeAllObjects();
-        addObject(new Button(new GreenfootImage("Der Pacman muss alle Punkte essen.",20,null,null),this,0,0,0),300,10);
-        addObject(new Button(new GreenfootImage("Die Geister müssen das verhindern, indem sie den Pacman fangen.",20,null,null),this,0,0,0),300,30);
-        addObject(new Button(new GreenfootImage("Powerups sind:",20,null,null),this,0,0,0),100,50);
-        addObject(new Button(new GreenfootImage("Gelber Punkt: Pacman kann kurzzeitig die Geister fangen",20,null,null),this,0,0,0),300,70);
-        addObject(new Button(new GreenfootImage("Die Steuerung kann im Menü mit einem Mausklick verändert werden.",20,null,null),this,0,0,0),300,90);
+        addObject(new Button(new GreenfootImage("Der Pacman muss die Punkte fressen und den Geister ausweichen,",20,null,null),this,0,100,100),300,30);
+        addObject(new Button(new GreenfootImage("es sei denn, er hat ein Powerup, dann kann er die Geister fressen.",20,null,null),this,0,100,100),300,60);
         addObject(new Button(new GreenfootImage("Zurück",getHeight()/20,null,null),this,29),550,390);
     }
 
-    
-    
-    /**
-     * zeigt die Knöpfe des Menüs
-     *
-     */
-    private void showMenu()
+    public void showMenu()
     {
+
         //creating the identifiers (adding a new Button, with a new Image thats some short text, giving it an identifier and ordering it in a columm)
         removeAllObjects();
         addObject(new Button(new GreenfootImage("Pacman oben:",getHeight()/20,null,null),this,4),75,10);
@@ -191,6 +170,7 @@ public class Menu extends World
         }
         //back button
         addObject(new Button(new GreenfootImage("Zurück",getHeight()/20,null,null),this,29),550,390);
+
     }
 
     public String ask(String question)
