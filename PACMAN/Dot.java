@@ -1,16 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Dot here.
+ * exists to be eaten by the Pacman.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben Konrad Meyer) 
+ * @version (2017-06-26)
  */
 public class Dot extends Actor
 {
     //describes whether this dot is a simple dot or one of various powerups
     public int state;
-    
+    /**
+        When the Dot is added to the wordl he gets a random state assigned. Everything not being 21 is normal
+        @param world mandatory for method identification by Greenfoot
+    */
     public void addedToWorld(World world)
     {
         state=Greenfoot.getRandomNumber(25);
@@ -19,12 +22,5 @@ public class Dot extends Actor
             //setImage(non-Default);
         }
     }
-    /**
-     * Act - do whatever the Dot wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+    
 }
