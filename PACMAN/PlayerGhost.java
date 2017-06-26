@@ -1,13 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PlayerGhost here.
+ * A ghost steered by a player
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ben Konrad Meyer) 
+ * @version (2017-06-26)
  */
 public class PlayerGhost extends Ghost
 {
+    //the ghosts controls
     private String[] controls=new String[4];
     /**
      * Act - do whatever the PlayerGhost wants to do. This method is called whenever
@@ -25,13 +26,20 @@ public class PlayerGhost extends Ghost
         blink();
     }
 
-    
+    /**
+        constructor for the class
+        @param number the identifier of the ghost
+        @param controls the controls of the ghost
+    */
     public PlayerGhost(int number,String[] controls)
     {
         this.number=number;
         this.controls=controls;
     }
 
+    /**
+        checks if turning is possible
+    */
    public void turn()
     {
         Junction junction = (Junction) getOneObjectAtOffset(0,0,Junction.class); 
@@ -54,6 +62,6 @@ public class PlayerGhost extends Ghost
         {
             setRotation(90);
         }
-        // Add your action code here.    
+        
     } 
 }
